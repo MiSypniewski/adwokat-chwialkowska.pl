@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 200vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+nav {
+  position: fixed;
+  height: 100%;
+  width: 120px;
+  background-color: black;
+  top: 0;
+  left: -120px;
+  transition: .3s;
+  z-index: 2;
+}
+
+nav div {
+  position: absolute;
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  bottom: 30px;
+  left: calc(50% - 20px);
+}
+
+nav div a {
+  text-decoration: none;
+  color: white;
+}
+
+nav div i {
+  transform: rotate(90deg);
+  animation: move 1s infinite linear both;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(90deg);
+  }
+
+  10% {
+    transform: rotate(70deg);
+  }
+
+  20% {
+    transform: rotate(110deg)
+  }
+
+  35% {
+    transform: rotate(70deg);
+  }
+
+  50% {
+    transform: rotate(110deg);
+  }
+
+  65% {
+    transform: rotate(70deg);
+  }
+
+  75% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+nav.active {
+  left: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+nav ul li:nth-child(2) {
+  margin-top: 40px;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+nav ul li a img {
+  height: 50px;
+}
+
+.burger {
+  position: fixed;
+  top: 15px;
+  right: 30px;
+  width: 30px;
+  height: 25px;
+  transition: .2s linear;
+  z-index: 2;
+}
+
+.burger.active {
+  transform: rotate(90deg);
+}
+
+.burger span {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  left: 0;
+  border-radius: 5px;
+  transition: top .2s .2s linear, bottom .2s .2s linear, opacity .2s .2s linear, transform .2s .4s linear, background-color .2s linear;
+}
+
+.burger span.black {
+  background-color: black;
+}
+
+.burger span:nth-child(1) {
+  top: 0;
+}
+
+.burger.active span:nth-child(1) {
+  top: calc(50% - 2.5px);
+  transform: rotate(45deg);
+}
+
+.burger span:nth-child(2) {
+  top: calc(50% - 2.5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger span:nth-child(3) {
+  bottom: 0;
+}
+
+.burger.active span:nth-child(3) {
+  bottom: calc(50% - 2.5px);
+  transform: rotate(-45deg);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("img/agnieszka-chwialkowska-gb.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+header h1 {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 10px;
+  top: 60%;
+  left: 0;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 10%;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.logo img {
+  height: 120px;
+}
+
+.off {
+  display: none;
+}
+
+main {
+  position: relative;
+  margin-top: 100vh;
+}
+
+section i {
+  font-size: 80px;
+}
+
+section h1 {
+  padding: 30px 30px 10px;
+  font-size: 30px;
+}
+
+section p {
+  font-size: 20px;
+  padding: 30px 30px;
+  line-height: 150%;
+  letter-spacing: 1px;
+}
+
+.features {
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+}
+
+.feature {
+  display: flex;
+  flex-basis: 33%;
+  flex-direction: column;
+  padding: 30px 0;
+  text-align: center;
+  flex-grow: 1;
+  font-family: 'Roboto', sans-serif;
+  transition: .5s;
+  /* justify-content: space-around; */
+}
+
+.feature ol {
+  text-align: left;
+  margin: 10px auto 0;
+  list-style: none;
+  font-size: 20px;
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  align-content: center;
+}
+
+
+.feature ol li:before {
+  content: "•";
+  margin-right: 7px;
+  font-weight: 700;
+}
+
+.feature ol li {
+  line-height: 150%;
+  letter-spacing: 1px;
+  padding: 5px 30px;
+}
+
+.feature:hover {
+  color: #cf2929;
+  transform: scale(1.1);
+}
+
+.office {
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.office h1 {
+  width: 100%;
+}
+
+.maxwidth {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.white {
+  background-color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 33%;
+}
+
+.wrapper div {
+  margin: 15px 15px;
+}
+
+.wrapper .person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper p {
+  font-size: 16px;
+  padding: 10px;
+  line-height: 100%;
+}
+
+.wrapper span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.wrapper a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+
+}
+
+.wrapper .map {
+  flex-grow: 1;
+  height: 370px;
+  padding: 0 15px;
+}
+
+.wrapper a:hover,
+.wrapper p:hover {
+  color: #cf2929;
+  font-weight: 700;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+@media (max-height: 320px) {
+  .logo img {
+    height: 60px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin-top: 5px;
+  }
+
+  nav ul li:nth-child(2) {
+    margin-top: 1px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+
+  nav div {
+    font-size: 30px;
+    bottom: 10px;
+    left: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 1023px) {
+  nav {
+    display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 66px;
+  }
+
+  .logo img {
+    height: 200px;
+  }
+}
