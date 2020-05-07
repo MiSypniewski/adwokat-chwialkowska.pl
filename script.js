@@ -1,25 +1,31 @@
-$('.burger').on('click', function () {
-  $('.burger, nav').toggleClass('active');
-})
+$(".burger").on("click", function () {
+  $(".burger, nav").toggleClass("active");
+});
 
-$('header h1').on('click', function () {
-  $('body, html').animate({
-    scrollTop: $('[data-section="comunication"]').offset().top
-  })
-})
+$(".header__text--js").on("click", function () {
+  $("body, html").animate({
+    scrollTop: $('[data-section="comunication"]').offset().top,
+  });
+});
 
-$('nav ul li a').on('click', function () {
-  const goToSection = "[data-section=" + $(this).attr('class') + "]";
-  if ($(this).attr('class') == 'home') {
-    $('body, html').animate({
-      scrollTop: 0
-    }, 500)
+$("nav ul li a").on("click", function () {
+  const goToSection = "[data-section=" + $(this).attr("class") + "]";
+  if ($(this).attr("class") == "home") {
+    $("body, html").animate(
+      {
+        scrollTop: 0,
+      },
+      500
+    );
   } else {
-    $('body, html').animate({
-      scrollTop: $(goToSection).offset().top
-    }, 500)
+    $("body, html").animate(
+      {
+        scrollTop: $(goToSection).offset().top,
+      },
+      500
+    );
   }
-})
+});
 
 function change() {
   const scroll = $(document).scrollTop();
@@ -32,18 +38,18 @@ function change() {
   const distanceSectionAbout = $('[data-section="about"]').offset().top;
 
   if (scroll < sectionHome) {
-    $('.burger span').removeClass('black');
-    $('.logo, header h1').removeClass('off');
+    $(".burger span").removeClass("black");
+    $(".header__wrapper--js, .header__text--js").removeClass("off");
   } else if (scroll < sectionServices + distanceSectionServices) {
-    $('.burger span').addClass('black');
-    $('.logo, header h1').addClass('off');
+    $(".burger span").addClass("black");
+    $(".header__wrapper--js, .header__text--js").addClass("off");
   } else if (scroll < sectionAbout + distanceSectionAbout) {
-    $('.burger span').removeClass('black');
-    $('.logo, header h1').addClass('off');
+    $(".burger span").removeClass("black");
+    $(".header__wrapper--js, .header__text--js").addClass("off");
   } else {
-    $('.burger span').addClass('black');
-    $('.logo, header h1').addClass('off');
+    $(".burger span").addClass("black");
+    $(".header__wrapper--js, .header__text--js").addClass("off");
   }
 }
 
-$(document).on('scroll', change)
+$(document).on("scroll", change);
