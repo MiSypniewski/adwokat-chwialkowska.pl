@@ -123,7 +123,7 @@ nav ul li a img {
   height: 5px;
   background-color: white;
   left: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: top 0.2s 0.2s linear, bottom 0.2s 0.2s linear, opacity 0.2s 0.2s linear, transform 0.2s 0.4s linear,
     background-color 0.2s linear;
 }
@@ -164,7 +164,7 @@ nav ul li a img {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url("img/agnieszka-chwialkowska-gb.jpg");
+  background-image: url("/img/agnieszka-chwialkowska-gb.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -193,12 +193,14 @@ nav ul li a img {
   font-size: 36px;
   color: white;
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   cursor: pointer;
+  text-shadow: 2px 2px #111111;
 }
 
 .header__img {
   height: 120px;
+  position: relative;
 }
 
 .off {
@@ -273,7 +275,7 @@ main {
 
 .office {
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .office__wrapper {
@@ -282,7 +284,7 @@ main {
 }
 
 .office__header {
-  padding: 24px 8px 8px;
+  padding: 24px 16px 8px;
   font-size: 30px;
 }
 
@@ -300,6 +302,7 @@ main {
 
 .contact {
   background-color: white;
+  padding-bottom: 24px;
 }
 
 .contact__wrapper {
@@ -308,33 +311,16 @@ main {
 }
 
 .contact__header {
-  padding: 24px 8px 8px;
+  padding: 24px 16px 8px;
   font-size: 30px;
 }
 
 .contact__box {
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-basis: 33%; */
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 16px;
-  padding: 24px;
   text-align: center;
 }
-
-/* .contact__foto {
-  margin: 0 auto;
-} */
-
-/* .wrapper .person {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 
 .contact__person--item {
   font-size: 16px;
@@ -354,7 +340,6 @@ main {
 }
 
 .contact__map {
-  /* flex-grow: 1; */
   height: 370px;
   padding: 0 15px;
 }
@@ -365,7 +350,7 @@ main {
   font-weight: 700;
 }
 
-footer {
+.footer {
   position: absolute;
   width: 100%;
   background-color: black;

@@ -31,10 +31,10 @@ function change() {
   const scroll = $(document).scrollTop();
 
   const sectionHome = $('[data-section="home"]').height();
-  const sectionServices = $('[data-section="services"]').height();
+  const sectionServices = $('[data-section="services--js"]').height();
   const sectionAbout = $('[data-section="about"]').height();
 
-  const distanceSectionServices = $('[data-section="services"]').offset().top;
+  const distanceSectionServices = $('[data-section="services--js"]').offset().top;
   const distanceSectionAbout = $('[data-section="about"]').offset().top;
 
   if (scroll < sectionHome) {
