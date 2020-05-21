@@ -4,8 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
-  /* height: 200vh; */
+.body {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
 }
@@ -21,7 +20,7 @@ body {
   z-index: 2;
 }
 
-nav div {
+.navigation__item--div {
   position: absolute;
   display: block;
   color: white;
@@ -31,12 +30,12 @@ nav div {
   left: calc(50% - 20px);
 }
 
-nav div a {
+.navigation__link--div {
   text-decoration: none;
   color: white;
 }
 
-nav div i {
+.fa-phone {
   transform: rotate(90deg);
   animation: move 1s infinite linear both;
 }
@@ -75,7 +74,7 @@ nav div i {
   }
 }
 
-nav.active {
+.navigation.active {
   left: 0;
 }
 
@@ -84,11 +83,11 @@ nav.active {
   margin-top: 15px;
 }
 
-nav ul li:nth-child(2) {
+.navigation__item--margin {
   margin-top: 40px;
 }
 
-nav ul li a {
+.navigation__item a {
   display: block;
   color: white;
   text-decoration: none;
@@ -99,7 +98,7 @@ nav ul li a {
   font-family: "Open Sans", sans-serif;
 }
 
-nav ul li a img {
+.navigation__img {
   height: 50px;
 }
 
@@ -207,7 +206,7 @@ nav ul li a img {
   display: none;
 }
 
-main {
+.main {
   position: relative;
   margin-top: 100vh;
 }
@@ -361,33 +360,25 @@ main {
   z-index: 1;
 }
 
-@media (max-height: 320px) {
-  .header__img {
-    height: 60px;
+@media (min-width: 768px){
+  .contact__box {
+   grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-template-areas: "contact__foto contact__person"
+  "contact__map contact__map";
   }
 
-  nav ul {
-    list-style: none;
-    margin-top: 5px;
+  .contact__foto{
+    grid-area: contact__foto;
   }
-
-  nav ul li:nth-child(2) {
-    margin-top: 1px;
+  .contact__person {
+    grid-area: contact__person;
   }
-
-  nav ul li a {
-    font-size: 16px;
-    padding: 4px 10px;
-  }
-
-  nav div {
-    font-size: 30px;
-    bottom: 10px;
-    left: calc(50% - 15px);
-  }
+  .contact__map {
+  grid-area: contact__map;
+}
 }
 
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   .navigation {
     display: none;
   }
@@ -402,5 +393,9 @@ main {
 
   .header__img {
     height: 200px;
+  }
+  .contact__box {
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-areas: "contact__foto contact__person contact__map";
   }
 }
