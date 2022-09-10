@@ -280,6 +280,7 @@
 .office__wrapper {
   max-width: 1024px;
   margin: 0 auto;
+  padding-bottom: 12px;
 }
 
 .office__header {
@@ -360,22 +361,23 @@
   z-index: 1;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .contact__box {
-   grid-template-columns: repeat(2, minmax(300px, 1fr));
-  grid-template-areas: "contact__foto contact__person"
-  "contact__map contact__map";
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-areas:
+      "contact__foto contact__person"
+      "contact__map contact__map";
   }
 
-  .contact__foto{
+  .contact__foto {
     grid-area: contact__foto;
   }
   .contact__person {
     grid-area: contact__person;
   }
   .contact__map {
-  grid-area: contact__map;
-}
+    grid-area: contact__map;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -395,7 +397,7 @@
     height: 200px;
   }
   .contact__box {
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-areas: "contact__foto contact__person contact__map";
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-areas: "contact__foto contact__person contact__map";
   }
 }
